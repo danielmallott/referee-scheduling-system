@@ -1,0 +1,3 @@
+﻿ALTER TABLE dbo.Referee
+ADD CONSTRAINT [PK_Referee] PRIMARY KEY CLUSTERED(RefereeId);
+GO

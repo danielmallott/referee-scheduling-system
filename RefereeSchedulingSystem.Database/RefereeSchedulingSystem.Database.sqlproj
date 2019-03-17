@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>RefereeSchedulingSystem.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{2c0a7843-df16-46e3-807a-38a6dfc6f1f2}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>RefereeSchedulingSystem.Database</RootNamespace>
+    <AssemblyName>RefereeSchedulingSystem.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Schemas" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\Tables" />
+    <Folder Include="History" />
+    <Folder Include="History\Tables" />
+    <Folder Include="dbo\Indexes" />
+    <Folder Include="dbo\Constraints" />
+    <Folder Include="History\Indexes" />
+    <Folder Include="Lookup" />
+    <Folder Include="Lookup\Tables" />
+    <Folder Include="Lookup\Constraints" />
+    <Folder Include="Postdeploy" />
+    <Folder Include="dbo\Keys" />
+    <Folder Include="Lookup\Keys" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schemas\History.sql" />
+    <Build Include="dbo\Tables\Referee.sql" />
+    <Build Include="History\Tables\Referee.sql" />
+    <Build Include="History\Indexes\CX_Referee_History_RefereeId_Date.sql" />
+    <Build Include="Schemas\Lookup.sql" />
+    <Build Include="Lookup\Tables\EmailType.sql" />
+    <Build Include="Lookup\Tables\PhoneType.sql" />
+    <Build Include="dbo\Tables\RefereeEmail.sql" />
+    <Build Include="History\Tables\RefereeEmail.sql" />
+    <Build Include="History\Indexes\CX_RefereeEmail_History_RefereeIdEmailTypeId_Date.sql" />
+    <Build Include="dbo\Constraints\DF_RefereeEmail_IsActive.sql" />
+    <Build Include="dbo\Constraints\DF_RefereeEmail_IsDefault.sql" />
+    <Build Include="dbo\Tables\RefereePhone.sql" />
+    <Build Include="History\Tables\RefereePhone.sql" />
+    <Build Include="History\Indexes\CX_RefereePhone_History_RefereeIdPhoneTypeId_Date.sql" />
+    <Build Include="dbo\Keys\PK_RefereePhone.sql" />
+    <Build Include="dbo\Keys\PK_Referee.sql" />
+    <Build Include="dbo\Keys\PK_RefereeEmail.sql" />
+    <Build Include="dbo\Constraints\DF_RefereePhone_IsActive.sql" />
+    <Build Include="dbo\Constraints\DF_RefereePhone_IsDefault.sql" />
+    <Build Include="dbo\Constraints\FK_RefereePhone_Referee.sql" />
+    <Build Include="dbo\Constraints\FK_RefereePhone_PhoneType.sql" />
+    <Build Include="dbo\Constraints\FK_RefereeEmail_Referee.sql" />
+    <Build Include="dbo\Constraints\FK_RefereeEmail_EmailType.sql" />
+    <Build Include="Lookup\Tables\Country.sql" />
+    <Build Include="Lookup\Keys\PK_PhoneType.sql" />
+    <Build Include="Lookup\Keys\PK_EmailType.sql" />
+    <Build Include="Lookup\Keys\PK_Country.sql" />
+    <Build Include="Lookup\Tables\StateProvince.sql" />
+    <Build Include="Lookup\Keys\PK_StateProvince.sql" />
+    <Build Include="Lookup\Constraints\FK_StateProvince_Country.sql" />
+    <Build Include="Lookup\Tables\SportType.sql" />
+    <Build Include="Lookup\Keys\PK_SportType.sql" />
+    <Build Include="Lookup\Tables\RefereeType.sql" />
+    <Build Include="Lookup\Keys\PK_RefereeType.sql" />
+    <Build Include="Lookup\Constraints\FK_RefereeType_SportType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Postdeploy\Lookup.EmailType.sql" />
+    <None Include="Postdeploy\Lookup.PhoneType.sql" />
+    <None Include="Postdeploy\Lookup.SportType.sql" />
+    <None Include="Postdeploy\Lookup.RefereeType.sql" />
+  </ItemGroup>
+</Project>

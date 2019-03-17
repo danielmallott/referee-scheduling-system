@@ -1,0 +1,3 @@
+﻿ALTER TABLE Lookup.SportType
+ADD CONSTRAINT [PK_SportType] PRIMARY KEY(SportTypeId);
+GO

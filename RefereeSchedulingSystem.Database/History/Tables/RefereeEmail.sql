@@ -1,0 +1,11 @@
+﻿CREATE TABLE History.RefereeEmail
+(
+	RefereeId UNIQUEIDENTIFIER NOT NULL,
+	EmailTypeId SMALLINT NOT NULL,
+	IsActive BIT NOT NULL,
+	IsDefault BIT NOT NULL,
+	DisplayOrder TINYINT NOT NULL,
+	ValidFrom DATETIME2(7) NOT NULL,
+	ValidTo DATETIME2(7) NOT NULL
+);
+GO

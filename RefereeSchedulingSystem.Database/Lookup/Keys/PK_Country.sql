@@ -1,0 +1,3 @@
+﻿ALTER TABLE Lookup.Country
+ADD CONSTRAINT [PK_Country] PRIMARY KEY(CountryId);
+GO
