@@ -66,6 +66,8 @@
     <Folder Include="Assemblies\" />
     <Folder Include="Security\" />
     <Folder Include="Predeploy" />
+    <Folder Include="lookupTests\" />
+    <Folder Include="lookupTests\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RefereeSchedulingSystem.Database\RefereeSchedulingSystem.Database.sqlproj">
@@ -231,6 +233,8 @@
     <Build Include="tSQLt\User Defined Types\Private.sql" />
     <Build Include="tSQLt\User Defined Types\AssertStringTable.sql" />
     <Build Include="Security\tSQLt.sql" />
+    <Build Include="lookupTests\Stored Procedures\Test Correct Number of Sport Types.sql" />
+    <Build Include="Security\lookupTests.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assemblies\tSQLtCLR.dll" />
