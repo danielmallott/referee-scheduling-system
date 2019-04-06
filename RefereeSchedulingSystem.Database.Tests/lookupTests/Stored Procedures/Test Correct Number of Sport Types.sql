@@ -3,7 +3,7 @@ AS
 BEGIN
     DECLARE @countOfTypes INT;
     DECLARE @expected INT;
-    SET @expected = 1;
+    SET @expected = 2;
 
     SET @countOfTypes = (SELECT COUNT(*) FROM [Lookup].SportType);
 
