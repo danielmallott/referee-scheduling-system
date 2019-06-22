@@ -1,0 +1,3 @@
+﻿ALTER TABLE dbo.Venue
+ADD CONSTRAINT [PK_Venue] PRIMARY KEY(VenueId);
+GO

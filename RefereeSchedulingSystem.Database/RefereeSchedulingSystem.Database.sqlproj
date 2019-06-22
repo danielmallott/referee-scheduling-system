@@ -71,6 +71,7 @@
     <Folder Include="Postdeploy" />
     <Folder Include="dbo\Keys" />
     <Folder Include="Lookup\Keys" />
+    <Folder Include="Lookup\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schemas\History.sql" />
@@ -109,6 +110,17 @@
     <Build Include="Lookup\Tables\RefereeType.sql" />
     <Build Include="Lookup\Keys\PK_RefereeType.sql" />
     <Build Include="Lookup\Constraints\FK_RefereeType_SportType.sql" />
+    <Build Include="Lookup\Tables\VenueType.sql" />
+    <Build Include="Lookup\Constraints\FK_VenueType_SportType.sql" />
+    <Build Include="Lookup\Keys\PK_VenueType.sql" />
+    <Build Include="dbo\Tables\Venue.sql" />
+    <Build Include="History\Tables\Venue.sql" />
+    <Build Include="History\Indexes\CX_Venue_History_VenueId_Date.sql" />
+    <Build Include="dbo\Keys\PK_Venue.sql" />
+    <Build Include="dbo\Constraints\FK_Venue_VenueType.sql" />
+    <Build Include="Lookup\Tables\GameType.sql" />
+    <Build Include="Lookup\Keys\PK_GameType.sql" />
+    <Build Include="Lookup\Stored Procedures\SportType_GetAll.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="PostDeployment.sql" />

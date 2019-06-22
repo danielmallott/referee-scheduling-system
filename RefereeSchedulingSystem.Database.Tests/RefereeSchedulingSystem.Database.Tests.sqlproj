@@ -235,6 +235,7 @@
     <Build Include="Security\tSQLt.sql" />
     <Build Include="lookupTests\Stored Procedures\Test Correct Number of Sport Types.sql" />
     <Build Include="Security\lookupTests.sql" />
+    <Build Include="lookupTests\Stored Procedures\Test SportType_GetAll Returns Table.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assemblies\tSQLtCLR.dll" />

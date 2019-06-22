@@ -259,3 +259,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/.DS_Store
+/._.DS_Store
+/RefereeSchedulingSystem.Database/._RefereeSchedulingSystem.Database.sqlproj
+/RefereeSchedulingSystem.Database/._.DS_Store
+/RefereeSchedulingSystem.Database/.DS_Store
+/RefereeSchedulingSystem.Database/Postdeploy/._Lookup.RefereeType.sql
